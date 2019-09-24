@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "install-all": "yarn && cd app && yarn && cd ../functions && yarn && cd ..",
+    "build-all": "yarn build:app && yarn build:functions",
+    "build:app": "cd app && yarn build && cd ..",
+    "build:functions": "cd functions && yarn lint && yarn build && cd ..",
+    "deploy": "yarn deploy:app && yarn deploy:functions",
+    "deploy:app": "yarn build:app && firebase deploy -P default --only hosting",
+    "deploy:functions": "yarn build:functions && firebase deploy -P default --only functions",
+    "graph": "git log --all --decorate --oneline --graph"
+  },
+  "devDependencies": {
+    "firebase-bolt": "0.8.4"
+  }
+}

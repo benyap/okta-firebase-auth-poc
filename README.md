@@ -1,4 +1,4 @@
-# Firebase x Okta // Custom Authentication proof of concept
+# Okta x Firebase // Custom Authentication proof of concept
 
 Proof of concept for integrating Okta authentication with Firebase.
 
