@@ -14,6 +14,7 @@ export const authenticate = functions
 
       try {
         // Verify the user's token from Okta.
+        // FIXME: this throws an error! Needs investigation.
         const decodedToken = await verifier.verifyAccessToken(
           data.token,
           functions.config().oktafirebasepoc.audience

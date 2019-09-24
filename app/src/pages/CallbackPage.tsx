@@ -5,6 +5,10 @@ import ScrollPanel from "../components/ScrollPanel";
 import FirebaseLoginButton from "../components/FirebaseLoginButton";
 import OktaLogoutButton from "../components/OktaLogoutButton";
 
+/**
+ * This page should parse any parameters returned from Okta
+ * and use it to log in to Firebase.
+ */
 const CallbackPage = () => {
   const search = parse(window.location.search);
   const hash = parse(window.location.hash);

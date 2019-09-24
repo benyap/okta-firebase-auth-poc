@@ -5,6 +5,13 @@ import * as c from "../../constants";
 
 import { OktaLogoutButtonProps } from "./types";
 
+/**
+ * WIP: Log the user out by redirecting to the logout URL.
+ *
+ * FIXME: This is broken at the moment - getting a 400 error
+ * (bad request) when redirecting with these parameters.
+ * Something wrong with the Id Token apparently.
+ */
 export const OktaLogoutButton: React.FC<OktaLogoutButtonProps> = ({
   idToken
 }) => {

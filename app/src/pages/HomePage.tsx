@@ -2,6 +2,9 @@ import React from "react";
 
 import OktaLoginButton from "../components/OktaLoginButton";
 
+/**
+ * Log in through Okta from this page.
+ */
 const HomePage = () => {
   return (
     <div className="content">
