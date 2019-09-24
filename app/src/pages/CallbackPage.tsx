@@ -3,6 +3,7 @@ import { parse } from "query-string";
 
 import ScrollPanel from "../components/ScrollPanel";
 import FirebaseLoginButton from "../components/FirebaseLoginButton";
+import OktaLogoutButton from "../components/OktaLogoutButton";
 
 const CallbackPage = () => {
   const search = parse(window.location.search);
@@ -32,6 +33,10 @@ const CallbackPage = () => {
           <p>This step would normally be automated.</p>
           <br />
           <FirebaseLoginButton token={hash.access_token as string} />
+          <br />
+          {hash.id_token && (
+            <OktaLogoutButton idToken={hash.id_token as string} />
+          )}
         </>
       )}
     </div>
