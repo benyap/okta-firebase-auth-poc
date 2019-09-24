@@ -1,0 +1,18 @@
+.scroll {
+  position: relative;
+
+  .overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), #eceff1);
+    opacity: 1;
+  }
+
+  .panel {
+    overflow-x: scroll;
+  }
+}
