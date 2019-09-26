@@ -5,6 +5,8 @@ import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import CallbackPage from "./pages/CallbackPage";
 
+import * as c from "./constants";
+
 import FirebaseLoginState from "./components/FirebaseLoginState";
 
 const App = () => {
@@ -21,7 +23,7 @@ const App = () => {
         </p>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/auth/callback" component={CallbackPage} />
+          <Route exact path={c.REDIRECT_URI} component={CallbackPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </main>

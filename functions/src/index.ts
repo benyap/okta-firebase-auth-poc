@@ -1,4 +1,5 @@
 import * as functions from "firebase-functions";
+import fetch from "node-fetch";
 // import { auth } from "firebase-admin";
 
 import verifier from "./okta";
@@ -14,7 +15,6 @@ export const authenticate = functions
 
       try {
         // Verify the user's token from Okta.
-        // FIXME: this throws an error! Needs investigation.
         const decodedToken = await verifier.verifyAccessToken(
           data.token,
           functions.config().oktafirebasepoc.audience

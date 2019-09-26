@@ -16,10 +16,6 @@ export const FirebaseLoginButton: React.FC<FirebaseLoginButtonProps> = ({
 
     // Call the cloud function that will return a Firebase auth token
     // if the provided Okta token is authenticated.
-
-    // FIXME: cloud function is currently broken. The intention is that
-    // once the function call returns with the Firebase auth token,
-    // the client can sign in to Firebase with it.
     firebase
       .functions()
       .httpsCallable("authenticate")({ token })
