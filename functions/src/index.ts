@@ -1,6 +1,6 @@
 import * as functions from "firebase-functions";
 import fetch from "node-fetch";
-// import { auth } from "firebase-admin";
+import { auth } from "firebase-admin";
 
 import verifier from "./okta";
 
@@ -41,9 +41,21 @@ export const authenticate = functions
 
         console.log(userInfo);
 
+        // Do more checks on Okta profile if necessary
+        //
+        // ... other checks
+        //
+
         // Get the user's Firebase auth user.
+        try {
+          const user = await auth().getUserByEmail(userInfo.email);
+          const token = auth().createCustomToken(user.uid);
+          return token;
+        } catch (error) {
+          // If one doesn't exist, create a new profile.
+          // TODO:
+        }
         return decodedToken;
-        // If one doesn't exist, create a new profile.
       } catch (error) {
         console.error(error);
       }
