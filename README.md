@@ -14,6 +14,7 @@ the parameters required log in with Okta.
 REACT_APP_CLIENT_ID=
 REACT_APP_AUTH_URL=
 REACT_APP_REDIRECT_URI=
+REACT_APP_AUTH_SERVER=
 ```
 
 Similarly, these variables also need to be provided to Firebase functions.
