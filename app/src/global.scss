@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+
+$background: #eceff1;
+$okta-blue: #007dc1;
+
+body {
+  margin: 0;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: $background;
+
+  h1 {
+    margin-bottom: 0.1rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  nav.menu {
+    width: 100%;
+    background: $okta-blue;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      padding: 1rem;
+      text-decoration: none;
+      background: $okta-blue;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        background: lighten($okta-blue, 2%);
+      }
+
+      &:active {
+        background: darken($okta-blue, 2%);
+      }
+    }
+  }
+
+  main {
+    margin: 0 5rem;
+
+    .subtitle {
+      color: gray;
+      margin-bottom: 1rem;
+    }
+
+    .buttons {
+      display: flex;
+    }
+
+    .content {
+      margin-bottom: 5rem;
+
+      button {
+        padding: 0.8rem 1.5rem;
+        background: $okta-blue;
+        color: white;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+          background: lighten($okta-blue, 2%);
+        }
+
+        &:active {
+          background: darken($okta-blue, 2%);
+        }
+      }
+    }
+
+    pre {
+      font-family: "Roboto Mono", monospace;
+    }
+  }
+}
