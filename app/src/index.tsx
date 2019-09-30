@@ -6,7 +6,9 @@ import { initialiseFirebase } from "./firebase";
 
 import "./global.scss";
 
-// Initialise Firebase
-initialiseFirebase();
+(async () => {
+  // Initialise Firebase
+  await initialiseFirebase();
 
-ReactDOM.render(<App />, document.getElementById("root"));
+  ReactDOM.render(<App />, document.getElementById("root"));
+})();

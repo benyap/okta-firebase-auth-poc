@@ -4,6 +4,7 @@ import decode from "jwt-decode";
 
 import ScrollPanel from "../components/ScrollPanel";
 import FirebaseLoginButton from "../components/FirebaseLoginButton";
+import FirebaseLogoutButton from "../components/FirebaseLogoutButton";
 import OktaLogoutButton from "../components/OktaLogoutButton";
 
 /**
@@ -91,11 +92,13 @@ const CallbackPage = () => {
           <br />
           <p>This step would normally be automated.</p>
           <br />
-          <FirebaseLoginButton token={hash.access_token as string} />
-          <br />
-          {hash.id_token && (
-            <OktaLogoutButton idToken={hash.id_token as string} />
-          )}
+          <div className="buttons">
+            <FirebaseLoginButton token={hash.access_token as string} />
+            <FirebaseLogoutButton />
+            {hash.id_token && (
+              <OktaLogoutButton idToken={hash.id_token as string} />
+            )}
+          </div>
         </>
       )}
     </div>
