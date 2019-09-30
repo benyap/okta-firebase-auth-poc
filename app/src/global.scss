@@ -50,7 +50,13 @@ body {
       margin-bottom: 1rem;
     }
 
+    .buttons {
+      display: flex;
+    }
+
     .content {
+      margin-bottom: 5rem;
+
       button {
         padding: 0.8rem 1.5rem;
         background: $okta-blue;
